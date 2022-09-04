@@ -2,12 +2,15 @@
   <div class="col-xs-12">
     <div
       class="panel panel-default">
-      <div class="panel-heading">{{ element.name }}</div>
+      <div class="panel-heading" #heading>{{ element.name }}</div>
       <div class="panel-body">
-        <p>
+        <!--p>
           <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
           <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-        </p>
+        </p-->
+        <!-- ng-content let the parent component defines its html inner code by what is inside of this app reference
+         which is <app-server-element> in this example -->
+        <ng-content></ng-content>
       </div>
     </div>
   </div>
